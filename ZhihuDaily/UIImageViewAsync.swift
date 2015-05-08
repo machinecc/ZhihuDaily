@@ -27,7 +27,7 @@ class UIImageViewAsync: UIImageView {
             }.resume()
     }
     
-    func setImageFromUrl(url : String) {
+    func loadImageFromUrl(url : String) {
         self.downloadDataFromUrl(url) { data in
             dispatch_async(dispatch_get_main_queue()) {
                 self.contentMode = UIViewContentMode.ScaleToFill

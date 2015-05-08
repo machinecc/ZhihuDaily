@@ -22,8 +22,8 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     
-    var topStoryImageWidth = 320
-    var topStoryImageHeight = 140
+    var svWidth : Float = 0.0
+    var svHeight : Float = 0.0
     
     
     // 文章集合，按日期分类
@@ -55,16 +55,14 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
         self.topStoriesScrollView.showsVerticalScrollIndicator = false
         self.topStoriesScrollView.showsHorizontalScrollIndicator = false
         self.topStoriesScrollView.bounces = false
+        self.topStoriesScrollView.layer.zPosition = 1
         
         // 设置ScrollView中图片大小
         var screenBounds = UIScreen.mainScreen().bounds
-        self.topStoryImageWidth = Int(screenBounds.size.width)
-        self.topStoryImageHeight = Int(screenBounds.size.height / 3)
+        self.svWidth = Float(screenBounds.size.width)
+        self.svHeight = Float(screenBounds.size.height / 3)
         
-        // 设置ScrollView视图
-        //self.topStoriesScrollView.frame.size = CGSizeMake(CGFloat(self.topStoryImageWidth), CGFloat(self.topStoryImageHeight))
-        self.topStoriesScrollView.frame = CGRectMake(CGFloat(0), CGFloat(0), CGFloat(self.topStoryImageWidth), CGFloat(self.topStoryImageHeight))
-        self.topStoriesScrollView.backgroundColor = UIColor.blueColor()
+
         
         
         // 下载最新文章
@@ -164,14 +162,14 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
                     
                     
                     // 设置ScrollView视图
-                    self.topStoriesScrollView.contentSize = CGSizeMake(CGFloat(self.topStoryImageWidth * self.topStories.count), CGFloat(self.topStoryImageHeight))
+                    self.topStoriesScrollView.contentSize = CGSizeMake(CGFloat(self.svWidth * Float(self.topStories.count)), CGFloat(self.svHeight))
                     
                     
                     
 
                     // 更新ScrollView图片
                     for (index, topStory) in enumerate(self.topStories) {
-                        var imgView = UIImageViewAsync(frame: CGRectMake(CGFloat(self.topStoryImageWidth * index), CGFloat(0), CGFloat(self.topStoryImageWidth), CGFloat(self.topStoryImageHeight)))
+                        var imgView = UIImageViewAsync(frame: CGRectMake(CGFloat(self.svWidth * Float(index)), CGFloat(0), CGFloat(self.svWidth), CGFloat(self.svHeight)))
                         
                         if topStory.imageUrl != nil {
                             //imgView.setImageFromUrl(topStory.imageUrl!)
