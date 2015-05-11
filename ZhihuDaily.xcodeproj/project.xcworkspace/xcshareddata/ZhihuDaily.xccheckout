@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EED89A52-4A38-4FDF-AD59-69AC787E5BD7</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ZhihuDaily</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F32C856AA73E9B7BD77C70EDF44C04EC6E9D7406</key>
 		<string>https://github.com/machinecc/ZhihuDaily.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ZhihuDaily.xcodeproj</string>
+	<string>ZhihuDaily.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F32C856AA73E9B7BD77C70EDF44C04EC6E9D7406</key>

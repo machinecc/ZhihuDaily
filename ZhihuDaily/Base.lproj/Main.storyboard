@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1u3-kf-Phz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1u3-kf-Phz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -16,14 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FNH-fo-f1b">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FNH-fo-f1b" customClass="LoopedScrollView" customModule="ZhihuDaily" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
-                                <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nDV-66-g9j">
-                                        <rect key="frame" x="541" y="123" width="39" height="37"/>
-                                    </pageControl>
-                                </subviews>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nDV-66-g9j">
+                                <rect key="frame" x="262" y="122" width="69" height="37"/>
+                            </pageControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8qE-1I-jQF">
                                 <rect key="frame" x="0.0" y="159" width="600" height="441"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,16 +40,18 @@
                             <constraint firstItem="FNH-fo-f1b" firstAttribute="top" secondItem="hjW-nn-Dv0" secondAttribute="top" id="AUd-vh-nDn"/>
                             <constraint firstAttribute="trailing" secondItem="8qE-1I-jQF" secondAttribute="trailing" id="FpC-U0-ryP"/>
                             <constraint firstItem="xOC-YG-7P2" firstAttribute="top" secondItem="8qE-1I-jQF" secondAttribute="bottom" id="GdS-S1-hx3"/>
+                            <constraint firstAttribute="centerX" secondItem="nDV-66-g9j" secondAttribute="centerX" id="Lzw-Xs-Jr6"/>
                             <constraint firstAttribute="trailing" secondItem="FNH-fo-f1b" secondAttribute="trailing" id="S0Z-73-HEk"/>
                             <constraint firstItem="8qE-1I-jQF" firstAttribute="top" secondItem="FNH-fo-f1b" secondAttribute="bottom" id="TvY-Ao-fuv"/>
                             <constraint firstItem="FNH-fo-f1b" firstAttribute="leading" secondItem="hjW-nn-Dv0" secondAttribute="leading" id="rIn-uI-fCn"/>
                             <constraint firstItem="8qE-1I-jQF" firstAttribute="leading" secondItem="hjW-nn-Dv0" secondAttribute="leading" id="vL9-iW-jXy"/>
+                            <constraint firstItem="nDV-66-g9j" firstAttribute="bottom" secondItem="FNH-fo-f1b" secondAttribute="bottom" id="yZO-uM-jSb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pageControl" destination="nDV-66-g9j" id="yUl-v1-Y6p"/>
                         <outlet property="storiesListTableView" destination="8qE-1I-jQF" id="A51-cG-Urn"/>
-                        <outlet property="topStoriesScrollView" destination="FNH-fo-f1b" id="HWr-Xk-Sbd"/>
+                        <outlet property="topStoriesScrollView" destination="FNH-fo-f1b" id="bmi-gg-jHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2V-dV-xZa" userLabel="First Responder" sceneMemberID="firstResponder"/>

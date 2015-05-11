@@ -11,7 +11,7 @@ import UIKit
 
 class LoopedScrollView: UIScrollView {
     
-    var leftImageView, middleImageView, rightImageView : UIImageViewAsync!
+    var leftImageView, middleImageView, rightImageView : UIImageView!
     var leftImageViewFrame, middleImageViewFrame, rightImageViewFrame : CGRect!
     
     var currentImage = 0
@@ -24,19 +24,40 @@ class LoopedScrollView: UIScrollView {
     
     var imageUrls : [String]!
     
-    var imageViews : [UIImageViewAsync] = []
+    var imageViews : [UIImageView] = []
 
     
     func initWithImageUrls(imageUrls : [String]) {
+        
         self.imageUrls = imageUrls
+        //self.imageUrls = ["img0", "img1", "img2", "img3", "img4"]
+        //self.imageUrls = ["img0", "img1"]
         self.numImages = self.imageUrls.count
         
         self.width = self.frame.width
         self.height = self.frame.height
         
+        self.contentSize = CGSizeMake(CGFloat(self.width * 3), self.height)
+        self.contentOffset = CGPointMake(self.width, 0)
+        self.pagingEnabled = true
+        self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
+        self.bounces = false
+
+        
         self.leftImageViewFrame = CGRectMake(0, 0, width, height)
         self.middleImageViewFrame = CGRectMake(width, 0, width, height)
         self.rightImageViewFrame = CGRectMake(width * 2, 0, width, height)
+        
+        /*
+        for url in self.imageUrls {
+            let imageView = UIImageView(image: UIImage(named: url)!)
+            self.imageViews.append(imageView)
+        }
+        */
+        
+        
+        
         
         for url in imageUrls {
             let imageView = UIImageViewAsync(frame: CGRectMake(CGFloat(0), CGFloat(0), width, height))
@@ -45,11 +66,7 @@ class LoopedScrollView: UIScrollView {
             self.imageViews.append(imageView)
         }
         
-
-        self.updateImageViews()
-        self.addSubview(self.leftImageView)
-        self.addSubview(self.middleImageView)
-        self.addSubview(self.rightImageView)
+        self.updateImageViews(true)
     }
     
     
@@ -76,21 +93,35 @@ class LoopedScrollView: UIScrollView {
             let rightImage = (currentImage + 1) % numImages
         }
         
-        self.contentOffset = CGPointMake(self.width, 0)
         
-        self.updateImageViews()
+        self.updateImageViews(false)
+        
+        self.contentOffset = CGPointMake(self.width, 0)
     }
     
     
     
-    private func updateImageViews() {
+    private func updateImageViews(isFirstTime : Bool) {
+        
+        if isFirstTime == false {
+            self.leftImageView.removeFromSuperview()
+            self.middleImageView.removeFromSuperview()
+            self.rightImageView.removeFromSuperview()
+        }
+        
         self.leftImageView = imageViews[(currentImage - 1 + numImages) % numImages]
         self.leftImageView.frame = self.leftImageViewFrame
+        self.addSubview(self.leftImageView)
+
         
         self.middleImageView = imageViews[currentImage]
         self.middleImageView.frame = self.middleImageViewFrame
+        self.addSubview(self.middleImageView)
+
         
         self.rightImageView = imageViews[(currentImage + 1) % numImages]
         self.rightImageView.frame = self.rightImageViewFrame
+        self.addSubview(self.rightImageView)
+
     }
 }

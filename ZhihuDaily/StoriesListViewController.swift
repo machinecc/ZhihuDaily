@@ -12,8 +12,8 @@ import UIKit
 class StroiesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
     
+    @IBOutlet weak var topStoriesScrollView: LoopedScrollView!
     
-    @IBOutlet weak var topStoriesScrollView: UIScrollView!
     
     @IBOutlet weak var storiesListTableView: UITableView!
     
@@ -48,21 +48,22 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
         // 设置tableView相关属性
         self.storiesListTableView.dataSource = self
         self.storiesListTableView.delegate = self
+        self.storiesListTableView.showsHorizontalScrollIndicator = false
+        self.storiesListTableView.showsVerticalScrollIndicator = false
+        self.storiesListTableView.bounces = false
         
         // 设置ScrollView相关属性
         self.topStoriesScrollView.delegate = self
-        self.topStoriesScrollView.pagingEnabled = true
-        self.topStoriesScrollView.showsVerticalScrollIndicator = false
-        self.topStoriesScrollView.showsHorizontalScrollIndicator = false
-        self.topStoriesScrollView.bounces = false
         self.topStoriesScrollView.layer.zPosition = 1
+        self.svWidth = Float(self.view.bounds.width)
+        self.svHeight = Float(self.view.bounds.height / 3)
         
-        // 设置ScrollView中图片大小
-        var screenBounds = UIScreen.mainScreen().bounds
-        self.svWidth = Float(screenBounds.size.width)
-        self.svHeight = Float(screenBounds.size.height / 3)
         
-
+        // 设置PageControl相关属性
+        self.pageControl.layer.zPosition = 2
+        self.pageControl.pageIndicatorTintColor = UIColor.grayColor()
+        self.pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
+        self.pageControl.enabled = false
         
         
         // 下载最新文章
@@ -152,43 +153,29 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
                         }
                     })
                     
-                    // 更新文章列表视图
-                    self.storiesListTableView.reloadData()
+                    // 在主线程中更新UI
+                    dispatch_async(dispatch_get_main_queue(), {
+                        () -> Void in
+                        self.storiesListTableView.reloadData()
+                        
+                        self.pageControl.numberOfPages = self.topStories.count
+                        
+                        self.pageControl.currentPage = 0
+                    })
                     
                     
                     
                     // 更新Top Stories
-                    self.topStories = self.parseStories(rawTopStories)
+                    self.topStories = self.parseTopStories(rawTopStories)
                     
                     
-                    // 设置ScrollView视图
-                    self.topStoriesScrollView.contentSize = CGSizeMake(CGFloat(self.svWidth * Float(self.topStories.count)), CGFloat(self.svHeight))
-                    
-                    
-                    
-
-                    // 更新ScrollView图片
-                    for (index, topStory) in enumerate(self.topStories) {
-                        var imgView = UIImageViewAsync(frame: CGRectMake(CGFloat(self.svWidth * Float(index)), CGFloat(0), CGFloat(self.svWidth), CGFloat(self.svHeight)))
-                        
-                        if topStory.imageUrl != nil {
-                            //imgView.setImageFromUrl(topStory.imageUrl!)
-                            //imgView.image = UIImage(named: "img\(index % 3)")
-                            imgView.image = UIImage(named: "img1")
-                        }
-
-                        self.topStoriesScrollView.addSubview(imgView)
+                    var imgUrls : [String] = []
+                    for topStory in self.topStories {
+                        var url = topStory.imageUrl
+                        imgUrls.append(url!)
                     }
                     
-                    
-                    
-                    
-                    // 设置pagecontrol
-                    self.pageControl.numberOfPages = self.topStories.count
-                    self.pageControl.currentPage = 0
-                    
-                    
-
+                    self.topStoriesScrollView.initWithImageUrls(imgUrls)
                 }
                 else {
                     NSLog("Parsing latest stories failed")
@@ -227,11 +214,31 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     
+    // 解析Top Stories内容，同样以Story的格式存储
+    func parseTopStories(rawStories : NSArray) -> [Story] {
+        var stories : [Story] = []
+        
+        for storyObj in rawStories {
+            let title = storyObj.objectForKey("title") as! String
+            
+            let id = (storyObj.objectForKey("id") as! NSNumber).stringValue
+            
+            let imageUrl = storyObj.objectForKey("image") as! String
+            
+            let story = Story(title: title, id: id, imageUrl: imageUrl)
+            
+            stories.append(story)
+        }
+        return stories
+    }
+    
+    
 
     // TopStoriesScrollView的delegate方法
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if scrollView == self.topStoriesScrollView {
-            
+            self.topStoriesScrollView.updateScrollView()
+            self.pageControl.currentPage = self.topStoriesScrollView.currentImage
         }
     }
     
