@@ -21,6 +21,8 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var pageControl: UIPageControl!
     
     
+    @IBOutlet weak var topStoryTitle: UILabel!
+    
     
     var svWidth : Float = 0.0
     var svHeight : Float = 0.0
@@ -45,25 +47,37 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
         // 设置日期格式
         self.dateFormatter.dateFormat = "yyyymmdd"
         
+        // 设置ScrollView相关属性
+        self.topStoriesScrollView.delegate = self
+        self.topStoriesScrollView.layer.zPosition = 1
+        self.svWidth = Float(self.view.bounds.width)
+        self.svHeight = Float(self.view.bounds.height / 3)
+        self.topStoriesScrollView.frame.size = CGSizeMake(CGFloat(self.svWidth), CGFloat(self.svHeight))
+        
+        
+        // 设置PageControl相关属性
+        self.pageControl.layer.zPosition = 100
+        self.pageControl.pageIndicatorTintColor = UIColor.grayColor()
+        self.pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
+        self.pageControl.enabled = false
+        
+        // 设置Top Story Title相关属性
+        self.topStoryTitle.layer.zPosition = 120
+        self.topStoryTitle.textColor = UIColor.whiteColor()
+        self.topStoryTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.topStoryTitle.numberOfLines = 0
+        self.topStoryTitle.font = UIFont.boldSystemFontOfSize(18)
+        
+        
         // 设置tableView相关属性
         self.storiesListTableView.dataSource = self
         self.storiesListTableView.delegate = self
         self.storiesListTableView.showsHorizontalScrollIndicator = false
         self.storiesListTableView.showsVerticalScrollIndicator = false
         self.storiesListTableView.bounces = false
-        
-        // 设置ScrollView相关属性
-        self.topStoriesScrollView.delegate = self
-        self.topStoriesScrollView.layer.zPosition = 1
-        self.svWidth = Float(self.view.bounds.width)
-        self.svHeight = Float(self.view.bounds.height / 3)
-        
-        
-        // 设置PageControl相关属性
-        self.pageControl.layer.zPosition = 2
-        self.pageControl.pageIndicatorTintColor = UIColor.grayColor()
-        self.pageControl.currentPageIndicatorTintColor = UIColor.whiteColor()
-        self.pageControl.enabled = false
+        let tableWidth = self.svWidth
+        let tableHeight = Float(self.view.bounds.height) - self.svHeight
+        self.storiesListTableView.frame.size = CGSizeMake(CGFloat(tableWidth), CGFloat(tableHeight))
         
         
         // 下载最新文章
@@ -161,6 +175,8 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
                         self.pageControl.numberOfPages = self.topStories.count
                         
                         self.pageControl.currentPage = 0
+                        
+                        self.topStoryTitle.text = self.topStories[0].title
                     })
                     
                     
@@ -239,6 +255,7 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
         if scrollView == self.topStoriesScrollView {
             self.topStoriesScrollView.updateScrollView()
             self.pageControl.currentPage = self.topStoriesScrollView.currentImage
+            self.topStoryTitle.text = self.topStories[self.pageControl.currentPage].title
         }
     }
     

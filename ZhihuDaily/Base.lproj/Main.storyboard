@@ -17,13 +17,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FNH-fo-f1b" customClass="LoopedScrollView" customModule="ZhihuDaily" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="205"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nDV-66-g9j">
-                                <rect key="frame" x="262" y="122" width="69" height="37"/>
+                                <rect key="frame" x="262" y="167" width="69" height="37"/>
                             </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avJ-3g-z2u">
+                                <rect key="frame" x="16" y="133" width="568" height="34"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8qE-1I-jQF">
-                                <rect key="frame" x="0.0" y="159" width="600" height="441"/>
+                                <rect key="frame" x="0.0" y="205" width="600" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryDescriptionCellID" id="6N3-Sz-kgZ">
@@ -43,6 +53,8 @@
                             <constraint firstAttribute="centerX" secondItem="nDV-66-g9j" secondAttribute="centerX" id="Lzw-Xs-Jr6"/>
                             <constraint firstAttribute="trailing" secondItem="FNH-fo-f1b" secondAttribute="trailing" id="S0Z-73-HEk"/>
                             <constraint firstItem="8qE-1I-jQF" firstAttribute="top" secondItem="FNH-fo-f1b" secondAttribute="bottom" id="TvY-Ao-fuv"/>
+                            <constraint firstItem="FNH-fo-f1b" firstAttribute="trailing" secondItem="avJ-3g-z2u" secondAttribute="trailing" constant="16" id="WR3-4t-FA5"/>
+                            <constraint firstItem="FNH-fo-f1b" firstAttribute="leading" secondItem="avJ-3g-z2u" secondAttribute="leading" constant="-16" id="cec-M7-Xpm"/>
                             <constraint firstItem="FNH-fo-f1b" firstAttribute="leading" secondItem="hjW-nn-Dv0" secondAttribute="leading" id="rIn-uI-fCn"/>
                             <constraint firstItem="8qE-1I-jQF" firstAttribute="leading" secondItem="hjW-nn-Dv0" secondAttribute="leading" id="vL9-iW-jXy"/>
                             <constraint firstItem="nDV-66-g9j" firstAttribute="bottom" secondItem="FNH-fo-f1b" secondAttribute="bottom" id="yZO-uM-jSb"/>
@@ -52,6 +64,7 @@
                         <outlet property="pageControl" destination="nDV-66-g9j" id="yUl-v1-Y6p"/>
                         <outlet property="storiesListTableView" destination="8qE-1I-jQF" id="A51-cG-Urn"/>
                         <outlet property="topStoriesScrollView" destination="FNH-fo-f1b" id="bmi-gg-jHT"/>
+                        <outlet property="topStoryTitle" destination="avJ-3g-z2u" id="92l-Nc-3an"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2V-dV-xZa" userLabel="First Responder" sceneMemberID="firstResponder"/>

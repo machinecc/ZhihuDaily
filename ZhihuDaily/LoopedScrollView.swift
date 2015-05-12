@@ -102,26 +102,26 @@ class LoopedScrollView: UIScrollView {
     
     
     private func updateImageViews(isFirstTime : Bool) {
+        dispatch_async(dispatch_get_main_queue()) {
+            if isFirstTime == false {
+                self.leftImageView.removeFromSuperview()
+                self.middleImageView.removeFromSuperview()
+                self.rightImageView.removeFromSuperview()
+            }
         
-        if isFirstTime == false {
-            self.leftImageView.removeFromSuperview()
-            self.middleImageView.removeFromSuperview()
-            self.rightImageView.removeFromSuperview()
+            self.leftImageView = self.imageViews[(self.currentImage - 1 + self.numImages) % self.numImages]
+            self.leftImageView.frame = self.leftImageViewFrame
+            self.addSubview(self.leftImageView)
+
+        
+            self.middleImageView = self.imageViews[self.currentImage]
+            self.middleImageView.frame = self.middleImageViewFrame
+            self.addSubview(self.middleImageView)
+
+        
+            self.rightImageView = self.imageViews[(self.currentImage + 1) % self.numImages]
+            self.rightImageView.frame = self.rightImageViewFrame
+            self.addSubview(self.rightImageView)
         }
-        
-        self.leftImageView = imageViews[(currentImage - 1 + numImages) % numImages]
-        self.leftImageView.frame = self.leftImageViewFrame
-        self.addSubview(self.leftImageView)
-
-        
-        self.middleImageView = imageViews[currentImage]
-        self.middleImageView.frame = self.middleImageViewFrame
-        self.addSubview(self.middleImageView)
-
-        
-        self.rightImageView = imageViews[(currentImage + 1) % numImages]
-        self.rightImageView.frame = self.rightImageViewFrame
-        self.addSubview(self.rightImageView)
-
     }
 }
