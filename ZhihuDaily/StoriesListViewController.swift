@@ -52,7 +52,7 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
         self.topStoriesScrollView.layer.zPosition = 1
         self.svWidth = Float(self.view.bounds.width)
         self.svHeight = Float(self.view.bounds.height / 3)
-        self.topStoriesScrollView.frame.size = CGSizeMake(CGFloat(self.svWidth), CGFloat(self.svHeight))
+        //self.topStoriesScrollView.frame.size = CGSizeMake(CGFloat(self.svWidth), CGFloat(self.svHeight))
         
         
         // 设置PageControl相关属性
@@ -75,9 +75,15 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
         self.storiesListTableView.showsHorizontalScrollIndicator = false
         self.storiesListTableView.showsVerticalScrollIndicator = false
         self.storiesListTableView.bounces = false
-        let tableWidth = self.svWidth
-        let tableHeight = Float(self.view.bounds.height) - self.svHeight
-        self.storiesListTableView.frame.size = CGSizeMake(CGFloat(tableWidth), CGFloat(tableHeight))
+        //let tableWidth = self.svWidth
+        //let tableHeight = Float(self.view.bounds.height) - self.svHeight
+        //self.storiesListTableView.frame.size = CGSizeMake(CGFloat(tableWidth), CGFloat(tableHeight))
+        
+        
+        // 注册tableView单元格
+        let nib = UINib(nibName: "StoryDescriptionCell", bundle: nil)
+        self.storiesListTableView.registerNib(nib, forCellReuseIdentifier: Consts.StoryDescriptionCellID)
+
         
         
         // 下载最新文章
@@ -107,19 +113,31 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
     // 获取文章简介的单元格
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = self.storiesListTableView.dequeueReusableCellWithIdentifier(Consts.StoryDescriptionCellID) as? UITableViewCell
+        var cell = self.storiesListTableView.dequeueReusableCellWithIdentifier(Consts.StoryDescriptionCellID, forIndexPath: indexPath) as? StoryDescriptionCell
         
         if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: Consts.StoryDescriptionCellID)
+            //cell = StoryDescriptionCell(
+            cell = StoryDescriptionCell(style: UITableViewCellStyle.Default, reuseIdentifier: Consts.StoryDescriptionCellID)
         }
         
         let date = self.dates[indexPath.section]
 
         let story = self.dailyStories[date]![indexPath.row]
         
-        cell?.textLabel?.text = story.title
+        
+        cell?.storyTitle.text = story.title
+        //cell?.storyTitle.sizeToFit()
+
+        if story.imageUrl != nil {
+            cell?.storyImage.loadImageFromUrl(story.imageUrl!)
+        }
         
         return cell!
+    }
+    
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return StoryDescriptionCell.Height
     }
     
 
@@ -167,6 +185,10 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
                         }
                     })
                     
+                    // 解析Top Stories
+                    self.topStories = self.parseTopStories(rawTopStories)
+                    
+                    
                     // 在主线程中更新UI
                     dispatch_async(dispatch_get_main_queue(), {
                         () -> Void in
@@ -180,11 +202,8 @@ class StroiesListViewController: UIViewController, UITableViewDataSource, UITabl
                     })
                     
                     
-                    
-                    // 更新Top Stories
-                    self.topStories = self.parseTopStories(rawTopStories)
-                    
-                    
+                
+                    // 更新Scroll View视图
                     var imgUrls : [String] = []
                     for topStory in self.topStories {
                         var url = topStory.imageUrl

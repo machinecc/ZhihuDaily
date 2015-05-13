@@ -19,6 +19,8 @@
 		225608CE1AF683D20033FF11 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CD1AF683D20033FF11 /* Common.swift */; };
 		225608D01AF74B100033FF11 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CF1AF74B100033FF11 /* Consts.swift */; };
 		22A1BA8C1AF9E60800115D02 /* UIImageViewAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */; };
+		22FD07421B0330B90092CC3D /* StoryDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */; };
+		22FD07441B0333150092CC3D /* StoryDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		225608CD1AF683D20033FF11 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		225608CF1AF74B100033FF11 /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewAsync.swift; sourceTree = "<group>"; };
+		22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryDescriptionCell.xib; sourceTree = "<group>"; };
+		22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDescriptionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				225608B21AF67CFB0033FF11 /* LaunchScreen.xib */,
 				225608A81AF67CFB0033FF11 /* ZhihuDaily.xcdatamodeld */,
 				225608A41AF67CFB0033FF11 /* Supporting Files */,
+				22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */,
+				22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */,
 			);
 			path = ZhihuDaily;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				225608AF1AF67CFB0033FF11 /* Main.storyboard in Resources */,
+				22FD07421B0330B90092CC3D /* StoryDescriptionCell.xib in Resources */,
 				225608B41AF67CFB0033FF11 /* LaunchScreen.xib in Resources */,
 				225608B11AF67CFB0033FF11 /* Images.xcassets in Resources */,
 			);
@@ -235,6 +242,7 @@
 				225608A71AF67CFB0033FF11 /* AppDelegate.swift in Sources */,
 				225608D01AF74B100033FF11 /* Consts.swift in Sources */,
 				225608CE1AF683D20033FF11 /* Common.swift in Sources */,
+				22FD07441B0333150092CC3D /* StoryDescriptionCell.swift in Sources */,
 				225608CA1AF67F9F0033FF11 /* MenuViewController.swift in Sources */,
 				223284D71AFCAC9000A5C40B /* LoopedScrollView.swift in Sources */,
 				22A1BA8C1AF9E60800115D02 /* UIImageViewAsync.swift in Sources */,
