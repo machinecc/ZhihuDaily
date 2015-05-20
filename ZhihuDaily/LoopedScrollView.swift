@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoopedScrollView: UIScrollView {
+class LoopedScrollView: UIScrollView, UIScrollViewDelegate {
     
     var leftImageView, middleImageView, rightImageView : UIImageView!
     var leftImageViewFrame, middleImageViewFrame, rightImageViewFrame : CGRect!
@@ -25,17 +25,18 @@ class LoopedScrollView: UIScrollView {
     var imageUrls : [String]!
     
     var imageViews : [UIImageView] = []
+    
+    var pageControl : UIPageControl!
 
     
-    func initWithImageUrls(imageUrls : [String]) {
-        
-        self.imageUrls = imageUrls
-        //self.imageUrls = ["img0", "img1", "img2", "img3", "img4"]
-        //self.imageUrls = ["img0", "img1"]
-        self.numImages = self.imageUrls.count
-        
+    func initWithFrameAndImageUrls(frame : CGRect, imageUrls : [String]) {
+        self.frame = frame
         self.width = self.frame.width
         self.height = self.frame.height
+        
+        self.imageUrls = imageUrls
+        self.numImages = self.imageUrls.count
+
         
         self.contentSize = CGSizeMake(CGFloat(self.width * 3), self.height)
         self.contentOffset = CGPointMake(self.width, 0)
@@ -43,31 +44,46 @@ class LoopedScrollView: UIScrollView {
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
         self.bounces = false
-
+        self.delegate = self
+        self.layer.zPosition = 1
+    
         
+        // 设置PageControl相关属性
+        self.pageControl = UIPageControl(frame: CGRectMake(0 + 100, 200, 800, 20))
+        self.pageControl.backgroundColor = UIColor.redColor()
+        self.addSubview(self.pageControl)
+
+        self.pageControl.layer.zPosition = 100
+        self.pageControl.currentPage = 0
+        self.pageControl.pageIndicatorTintColor = UIColor.grayColor()
+        self.pageControl.currentPageIndicatorTintColor = UIColor.redColor()
+        self.pageControl.enabled = true
+        
+
         self.leftImageViewFrame = CGRectMake(0, 0, width, height)
         self.middleImageViewFrame = CGRectMake(width, 0, width, height)
         self.rightImageViewFrame = CGRectMake(width * 2, 0, width, height)
         
-        /*
-        for url in self.imageUrls {
-            let imageView = UIImageView(image: UIImage(named: url)!)
-            self.imageViews.append(imageView)
-        }
-        */
-        
-        
-        
-        
         for url in imageUrls {
             let imageView = UIImageViewAsync(frame: CGRectMake(CGFloat(0), CGFloat(0), width, height))
             imageView.loadImageFromUrl(url)
+            //let imageView = UIImageView(frame: CGRectMake(CGFloat(0), CGFloat(0), width, height))
+            //imageView.image = UIImage(named: url)
+            imageView.layer.zPosition = 1
             
             self.imageViews.append(imageView)
         }
         
         self.updateImageViews(true)
     }
+
+    
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        self.updateScrollView()
+    }
+    
+    
     
     
     // When the scroll View has ended decelerating the scrolling movement, update Views
@@ -96,7 +112,6 @@ class LoopedScrollView: UIScrollView {
         
         self.updateImageViews(false)
         
-        self.contentOffset = CGPointMake(self.width, 0)
     }
     
     
@@ -107,6 +122,8 @@ class LoopedScrollView: UIScrollView {
                 self.leftImageView.removeFromSuperview()
                 self.middleImageView.removeFromSuperview()
                 self.rightImageView.removeFromSuperview()
+            }
+            else {
             }
         
             self.leftImageView = self.imageViews[(self.currentImage - 1 + self.numImages) % self.numImages]
@@ -122,6 +139,9 @@ class LoopedScrollView: UIScrollView {
             self.rightImageView = self.imageViews[(self.currentImage + 1) % self.numImages]
             self.rightImageView.frame = self.rightImageViewFrame
             self.addSubview(self.rightImageView)
+            
+            self.scrollRectToVisible(CGRectMake(self.width, 0, self.width, self.height), animated: false)
+            self.pageControl.currentPage = self.currentImage
         }
     }
 }

@@ -14,13 +14,18 @@
 		225608B11AF67CFB0033FF11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225608B01AF67CFB0033FF11 /* Images.xcassets */; };
 		225608B41AF67CFB0033FF11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225608B21AF67CFB0033FF11 /* LaunchScreen.xib */; };
 		225608C01AF67CFB0033FF11 /* ZhihuDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608BF1AF67CFB0033FF11 /* ZhihuDailyTests.swift */; };
-		225608CA1AF67F9F0033FF11 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608C91AF67F9F0033FF11 /* MenuViewController.swift */; };
-		225608CC1AF6803A0033FF11 /* StoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CB1AF6803A0033FF11 /* StoriesListViewController.swift */; };
 		225608CE1AF683D20033FF11 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CD1AF683D20033FF11 /* Common.swift */; };
 		225608D01AF74B100033FF11 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CF1AF74B100033FF11 /* Consts.swift */; };
 		22A1BA8C1AF9E60800115D02 /* UIImageViewAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */; };
+		22A785F11B07ABB40084F493 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A785F01B07ABB40084F493 /* SWRevealViewController.m */; };
+		22A785F31B07AC940084F493 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A785F21B07AC940084F493 /* MenuViewController.swift */; };
+		22A785F51B07B1E70084F493 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A785F41B07B1E70084F493 /* HomeViewController.swift */; };
+		22A785FD1B0ACC770084F493 /* StorySectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A785FC1B0ACC770084F493 /* StorySectionHeader.xib */; };
+		22A785FF1B0ACF140084F493 /* StorySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A785FE1B0ACF140084F493 /* StorySectionHeader.swift */; };
+		22A786011B0ADCDB0084F493 /* StorySectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A786001B0ADCDB0084F493 /* StorySectionHeaderCell.swift */; };
 		22FD07421B0330B90092CC3D /* StoryDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */; };
 		22FD07441B0333150092CC3D /* StoryDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */; };
+		22FD07491B03F2630092CC3D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD07481B03F2630092CC3D /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +50,20 @@
 		225608B91AF67CFB0033FF11 /* ZhihuDailyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhihuDailyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		225608BE1AF67CFB0033FF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225608BF1AF67CFB0033FF11 /* ZhihuDailyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhihuDailyTests.swift; sourceTree = "<group>"; };
-		225608C91AF67F9F0033FF11 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		225608CB1AF6803A0033FF11 /* StoriesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoriesListViewController.swift; sourceTree = "<group>"; };
 		225608CD1AF683D20033FF11 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		225608CF1AF74B100033FF11 /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewAsync.swift; sourceTree = "<group>"; };
+		22A785EE1B07ABB30084F493 /* ZhihuDaily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhihuDaily-Bridging-Header.h"; sourceTree = "<group>"; };
+		22A785EF1B07ABB40084F493 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		22A785F01B07ABB40084F493 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		22A785F21B07AC940084F493 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		22A785F41B07B1E70084F493 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		22A785FC1B0ACC770084F493 /* StorySectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorySectionHeader.xib; sourceTree = "<group>"; };
+		22A785FE1B0ACF140084F493 /* StorySectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorySectionHeader.swift; sourceTree = "<group>"; };
+		22A786001B0ADCDB0084F493 /* StorySectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorySectionHeaderCell.swift; sourceTree = "<group>"; };
 		22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryDescriptionCell.xib; sourceTree = "<group>"; };
 		22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDescriptionCell.swift; sourceTree = "<group>"; };
+		22FD07481B03F2630092CC3D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,20 +105,15 @@
 		225608A31AF67CFB0033FF11 /* ZhihuDaily */ = {
 			isa = PBXGroup;
 			children = (
+				22FD074E1B0492320092CC3D /* Controller */,
+				22FD074D1B0492110092CC3D /* View */,
+				22FD074C1B0491F80092CC3D /* Util */,
 				225608A61AF67CFB0033FF11 /* AppDelegate.swift */,
 				225608AD1AF67CFB0033FF11 /* Main.storyboard */,
-				225608C91AF67F9F0033FF11 /* MenuViewController.swift */,
-				225608CB1AF6803A0033FF11 /* StoriesListViewController.swift */,
-				225608CD1AF683D20033FF11 /* Common.swift */,
-				225608CF1AF74B100033FF11 /* Consts.swift */,
-				22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */,
-				223284D61AFCAC9000A5C40B /* LoopedScrollView.swift */,
 				225608B01AF67CFB0033FF11 /* Images.xcassets */,
 				225608B21AF67CFB0033FF11 /* LaunchScreen.xib */,
 				225608A81AF67CFB0033FF11 /* ZhihuDaily.xcdatamodeld */,
 				225608A41AF67CFB0033FF11 /* Supporting Files */,
-				22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */,
-				22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */,
 			);
 			path = ZhihuDaily;
 			sourceTree = "<group>";
@@ -134,6 +141,50 @@
 				225608BE1AF67CFB0033FF11 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22A785ED1B07AB920084F493 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22A785EF1B07ABB40084F493 /* SWRevealViewController.h */,
+				22A785F01B07ABB40084F493 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		22FD074C1B0491F80092CC3D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				22A785EE1B07ABB30084F493 /* ZhihuDaily-Bridging-Header.h */,
+				225608CD1AF683D20033FF11 /* Common.swift */,
+				225608CF1AF74B100033FF11 /* Consts.swift */,
+				22FD07481B03F2630092CC3D /* Date.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		22FD074D1B0492110092CC3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				223284D61AFCAC9000A5C40B /* LoopedScrollView.swift */,
+				22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */,
+				22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */,
+				22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */,
+				22A785FC1B0ACC770084F493 /* StorySectionHeader.xib */,
+				22A785FE1B0ACF140084F493 /* StorySectionHeader.swift */,
+				22A786001B0ADCDB0084F493 /* StorySectionHeaderCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		22FD074E1B0492320092CC3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22A785ED1B07AB920084F493 /* SWRevealViewController */,
+				22A785F21B07AC940084F493 /* MenuViewController.swift */,
+				22A785F41B07B1E70084F493 /* HomeViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A785FD1B0ACC770084F493 /* StorySectionHeader.xib in Resources */,
 				225608AF1AF67CFB0033FF11 /* Main.storyboard in Resources */,
 				22FD07421B0330B90092CC3D /* StoryDescriptionCell.xib in Resources */,
 				225608B41AF67CFB0033FF11 /* LaunchScreen.xib in Resources */,
@@ -238,14 +290,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				225608AA1AF67CFB0033FF11 /* ZhihuDaily.xcdatamodeld in Sources */,
-				225608CC1AF6803A0033FF11 /* StoriesListViewController.swift in Sources */,
+				22FD07491B03F2630092CC3D /* Date.swift in Sources */,
 				225608A71AF67CFB0033FF11 /* AppDelegate.swift in Sources */,
+				22A785F51B07B1E70084F493 /* HomeViewController.swift in Sources */,
+				22A786011B0ADCDB0084F493 /* StorySectionHeaderCell.swift in Sources */,
 				225608D01AF74B100033FF11 /* Consts.swift in Sources */,
+				22A785F31B07AC940084F493 /* MenuViewController.swift in Sources */,
 				225608CE1AF683D20033FF11 /* Common.swift in Sources */,
 				22FD07441B0333150092CC3D /* StoryDescriptionCell.swift in Sources */,
-				225608CA1AF67F9F0033FF11 /* MenuViewController.swift in Sources */,
 				223284D71AFCAC9000A5C40B /* LoopedScrollView.swift in Sources */,
+				22A785FF1B0ACF140084F493 /* StorySectionHeader.swift in Sources */,
 				22A1BA8C1AF9E60800115D02 /* UIImageViewAsync.swift in Sources */,
+				22A785F11B07ABB40084F493 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,9 +428,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily/ZhihuDaily-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -382,9 +442,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ZhihuDaily/ZhihuDaily-Bridging-Header.h";
 			};
 			name = Release;
 		};
