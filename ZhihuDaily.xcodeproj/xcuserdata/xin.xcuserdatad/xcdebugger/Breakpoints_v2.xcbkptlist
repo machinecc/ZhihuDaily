@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZhihuDaily/UIImageViewAsync.swift"
-            timestampString = "453028014.212675"
+            timestampString = "454222561.092739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "UIImageViewAsync"
             landmarkType = "3">
          </BreakpointContent>
@@ -62,6 +62,22 @@
             startingLineNumber = "153"
             endingLineNumber = "153"
             landmarkName = "toString(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZhihuDaily/StoryViewController.swift"
+            timestampString = "454439353.807828"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "initViews()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

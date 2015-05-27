@@ -34,8 +34,8 @@ class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         // 设置Navigationbar相关属性
-        self.navigationController?.navigationBar.backgroundColor = Consts.BlueColor
-        self.navigationController?.navigationBar.translucent = false
+        //self.navigationController?.navigationBar.backgroundColor = Consts.BlueColor
+        //self.navigationController?.navigationBar.translucent = false
         
         
         // 设置SWRevealViewController相关属性
@@ -345,6 +345,36 @@ class HomeViewController: UITableViewController {
         }
         
         return false
+    }
+    
+    
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //println("section = \(indexPath.section)     row = \(indexPath.row)")
+        self.performSegueWithIdentifier("sw_showstory", sender: self)
+    }
+    
+    
+    
+    
+    
+    
+    // 准备显示Story视图
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "sw_showstory" {
+            // 获取当前选中的文章
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            let date = self.dates[indexPath.section]
+            let stories = self.dailyStories[date]!
+            let story = stories[indexPath.row]
+            
+            // 初始化Story视图
+            let destVC = segue.destinationViewController as! StoryViewController
+            destVC.storyID = story.id
+            destVC.initViews()
+            
+        }
     }
     
 }

@@ -21,8 +21,7 @@ class UIImageViewAsync: UIImageView {
     
     
     
-    private func downloadDataFromUrl(url : String, completion : ((data : NSData?) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!) { (data, response, error) in
+    private func downloadDataFromUrl(url : String, completion : ((data : NSData?) -> Void)) {        NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!) { (data, response, error) in
             completion(data: NSData(data: data))
             }.resume()
     }

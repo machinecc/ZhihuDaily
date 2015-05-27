@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		223284D71AFCAC9000A5C40B /* LoopedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223284D61AFCAC9000A5C40B /* LoopedScrollView.swift */; };
+		2244ACF31B16300200D5AD16 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244ACF21B16300200D5AD16 /* Utils.swift */; };
+		2244ACF51B16303100D5AD16 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2244ACF41B16303100D5AD16 /* Story.swift */; };
 		225608A71AF67CFB0033FF11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608A61AF67CFB0033FF11 /* AppDelegate.swift */; };
 		225608AA1AF67CFB0033FF11 /* ZhihuDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 225608A81AF67CFB0033FF11 /* ZhihuDaily.xcdatamodeld */; };
 		225608AF1AF67CFB0033FF11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 225608AD1AF67CFB0033FF11 /* Main.storyboard */; };
 		225608B11AF67CFB0033FF11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225608B01AF67CFB0033FF11 /* Images.xcassets */; };
 		225608B41AF67CFB0033FF11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225608B21AF67CFB0033FF11 /* LaunchScreen.xib */; };
 		225608C01AF67CFB0033FF11 /* ZhihuDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608BF1AF67CFB0033FF11 /* ZhihuDailyTests.swift */; };
-		225608CE1AF683D20033FF11 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CD1AF683D20033FF11 /* Common.swift */; };
 		225608D01AF74B100033FF11 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CF1AF74B100033FF11 /* Consts.swift */; };
 		22A1BA8C1AF9E60800115D02 /* UIImageViewAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */; };
 		22A785F11B07ABB40084F493 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A785F01B07ABB40084F493 /* SWRevealViewController.m */; };
@@ -23,6 +24,8 @@
 		22A785FD1B0ACC770084F493 /* StorySectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A785FC1B0ACC770084F493 /* StorySectionHeader.xib */; };
 		22A785FF1B0ACF140084F493 /* StorySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A785FE1B0ACF140084F493 /* StorySectionHeader.swift */; };
 		22A786011B0ADCDB0084F493 /* StorySectionHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A786001B0ADCDB0084F493 /* StorySectionHeaderCell.swift */; };
+		22A786031B0C23710084F493 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A786021B0C23710084F493 /* StoryViewController.swift */; };
+		22F46A611B12F40700C1D423 /* StoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F46A601B12F40700C1D423 /* StoryDetail.swift */; };
 		22FD07421B0330B90092CC3D /* StoryDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */; };
 		22FD07441B0333150092CC3D /* StoryDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */; };
 		22FD07491B03F2630092CC3D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD07481B03F2630092CC3D /* Date.swift */; };
@@ -40,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		223284D61AFCAC9000A5C40B /* LoopedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopedScrollView.swift; sourceTree = "<group>"; };
+		2244ACF21B16300200D5AD16 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2244ACF41B16303100D5AD16 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		225608A11AF67CFB0033FF11 /* ZhihuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhihuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		225608A51AF67CFB0033FF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225608A61AF67CFB0033FF11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +55,6 @@
 		225608B91AF67CFB0033FF11 /* ZhihuDailyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhihuDailyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		225608BE1AF67CFB0033FF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225608BF1AF67CFB0033FF11 /* ZhihuDailyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhihuDailyTests.swift; sourceTree = "<group>"; };
-		225608CD1AF683D20033FF11 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		225608CF1AF74B100033FF11 /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewAsync.swift; sourceTree = "<group>"; };
 		22A785EE1B07ABB30084F493 /* ZhihuDaily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhihuDaily-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		22A785FC1B0ACC770084F493 /* StorySectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StorySectionHeader.xib; sourceTree = "<group>"; };
 		22A785FE1B0ACF140084F493 /* StorySectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorySectionHeader.swift; sourceTree = "<group>"; };
 		22A786001B0ADCDB0084F493 /* StorySectionHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorySectionHeaderCell.swift; sourceTree = "<group>"; };
+		22A786021B0C23710084F493 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		22F46A601B12F40700C1D423 /* StoryDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDetail.swift; sourceTree = "<group>"; };
 		22FD07411B0330B90092CC3D /* StoryDescriptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryDescriptionCell.xib; sourceTree = "<group>"; };
 		22FD07431B0333150092CC3D /* StoryDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryDescriptionCell.swift; sourceTree = "<group>"; };
 		22FD07481B03F2630092CC3D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -107,7 +113,7 @@
 			children = (
 				22FD074E1B0492320092CC3D /* Controller */,
 				22FD074D1B0492110092CC3D /* View */,
-				22FD074C1B0491F80092CC3D /* Util */,
+				22FD074C1B0491F80092CC3D /* Common */,
 				225608A61AF67CFB0033FF11 /* AppDelegate.swift */,
 				225608AD1AF67CFB0033FF11 /* Main.storyboard */,
 				225608B01AF67CFB0033FF11 /* Images.xcassets */,
@@ -152,15 +158,17 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
-		22FD074C1B0491F80092CC3D /* Util */ = {
+		22FD074C1B0491F80092CC3D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2244ACF41B16303100D5AD16 /* Story.swift */,
+				22F46A601B12F40700C1D423 /* StoryDetail.swift */,
 				22A785EE1B07ABB30084F493 /* ZhihuDaily-Bridging-Header.h */,
-				225608CD1AF683D20033FF11 /* Common.swift */,
 				225608CF1AF74B100033FF11 /* Consts.swift */,
 				22FD07481B03F2630092CC3D /* Date.swift */,
+				2244ACF21B16300200D5AD16 /* Utils.swift */,
 			);
-			name = Util;
+			name = Common;
 			sourceTree = "<group>";
 		};
 		22FD074D1B0492110092CC3D /* View */ = {
@@ -183,6 +191,7 @@
 				22A785ED1B07AB920084F493 /* SWRevealViewController */,
 				22A785F21B07AC940084F493 /* MenuViewController.swift */,
 				22A785F41B07B1E70084F493 /* HomeViewController.swift */,
+				22A786021B0C23710084F493 /* StoryViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -294,13 +303,16 @@
 				225608A71AF67CFB0033FF11 /* AppDelegate.swift in Sources */,
 				22A785F51B07B1E70084F493 /* HomeViewController.swift in Sources */,
 				22A786011B0ADCDB0084F493 /* StorySectionHeaderCell.swift in Sources */,
+				2244ACF31B16300200D5AD16 /* Utils.swift in Sources */,
 				225608D01AF74B100033FF11 /* Consts.swift in Sources */,
+				2244ACF51B16303100D5AD16 /* Story.swift in Sources */,
+				22F46A611B12F40700C1D423 /* StoryDetail.swift in Sources */,
 				22A785F31B07AC940084F493 /* MenuViewController.swift in Sources */,
-				225608CE1AF683D20033FF11 /* Common.swift in Sources */,
 				22FD07441B0333150092CC3D /* StoryDescriptionCell.swift in Sources */,
 				223284D71AFCAC9000A5C40B /* LoopedScrollView.swift in Sources */,
 				22A785FF1B0ACF140084F493 /* StorySectionHeader.swift in Sources */,
 				22A1BA8C1AF9E60800115D02 /* UIImageViewAsync.swift in Sources */,
+				22A786031B0C23710084F493 /* StoryViewController.swift in Sources */,
 				22A785F11B07ABB40084F493 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ZhihuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

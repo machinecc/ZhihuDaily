@@ -7,7 +7,6 @@
         <!--首页-->
         <scene sceneID="Ash-Dy-fpA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ewn-Yf-GOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="6h0-YO-bSX" customClass="StoriesTableViewController" customModule="ZhihuDaily" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Hu-II-l2E">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
@@ -44,6 +43,7 @@
                         <outlet property="headerView" destination="qO9-9A-dnn" id="3kQ-eP-Oze"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewn-Yf-GOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="448" y="921"/>
         </scene>
@@ -87,6 +87,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vRD-Dd-aYE" id="k3f-4E-Ic6">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ALP-Ib-fbC" kind="show" identifier="sw_showstory" id="KEK-or-gJ0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -105,7 +108,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1r-w6-jqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1559" y="2403"/>
+            <point key="canvasLocation" x="1687" y="2402"/>
+        </scene>
+        <!--Story View Controller-->
+        <scene sceneID="5vU-6Z-RBo">
+            <objects>
+                <viewController id="ALP-Ib-fbC" customClass="StoryViewController" customModule="ZhihuDaily" customModuleProvider="target" sceneMemberID="viewController">
+                    <webView key="view" contentMode="scaleToFill" id="Mrp-tM-RpE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </webView>
+                    <navigationItem key="navigationItem" id="77e-cf-kbR"/>
+                    <connections>
+                        <outlet property="webView" destination="Mrp-tM-RpE" id="qEW-iS-fab"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EjI-r2-3Ze" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2418" y="2402"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QOz-mn-rg4">

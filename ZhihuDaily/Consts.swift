@@ -12,6 +12,7 @@ import UIKit
 struct Consts {
     static let LatestStoriesUrl = "http://news-at.zhihu.com/api/4/news/latest"
     static let PreviousStoriesUrl = "http://news.at.zhihu.com/api/4/news/before/"
+    static let StoryUrl = "http://news-at.zhihu.com/api/4/news/"
     
     
     
@@ -20,3 +21,5 @@ struct Consts {
     
     static let BlueColor = UIColor(red: 2/255, green: 143/255, blue: 214/255, alpha: 1.0)
 }
+
+
