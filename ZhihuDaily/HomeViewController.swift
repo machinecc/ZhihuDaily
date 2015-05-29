@@ -32,11 +32,15 @@ class HomeViewController: UITableViewController {
     var isLoadingMoreStories : Bool = false
     
     
+    // 当前显示的文章所对应的indexPath
+    var indexPathOfCurrentStory : NSIndexPath!
+    
+    
     override func viewDidLoad() {
         // 设置Navigationbar相关属性
         //self.navigationController?.navigationBar.backgroundColor = Consts.BlueColor
         //self.navigationController?.navigationBar.translucent = false
-        
+        //println(111)
         
         // 设置SWRevealViewController相关属性
         if self.revealViewController() != nil {
@@ -349,15 +353,11 @@ class HomeViewController: UITableViewController {
     
     
     
-    
+    // 跳转至Story视图
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //println("section = \(indexPath.section)     row = \(indexPath.row)")
+        self.indexPathOfCurrentStory = indexPath
         self.performSegueWithIdentifier("sw_showstory", sender: self)
     }
-    
-    
-    
-    
     
     
     // 准备显示Story视图
@@ -365,16 +365,51 @@ class HomeViewController: UITableViewController {
         if segue.identifier == "sw_showstory" {
             // 获取当前选中的文章
             let indexPath = self.tableView.indexPathForSelectedRow()!
-            let date = self.dates[indexPath.section]
-            let stories = self.dailyStories[date]!
-            let story = stories[indexPath.row]
+            let story = self.storyAtIndexPath(indexPath)
             
             // 初始化Story视图
             let destVC = segue.destinationViewController as! StoryViewController
             destVC.storyID = story.id
+            //destVC.homeViewController = self
             destVC.initViews()
             
         }
     }
+    
+    // 获取位于indexPath上的Story
+    func storyAtIndexPath(indexPath : NSIndexPath) -> Story {
+        assert(indexPath.section < self.dates.count, "No stories in section \(indexPath.section)")
+        let date = self.dates[indexPath.section]
+        
+        assert(self.dailyStories[date] != nil, "Story not found on day \(date)")
+        let stories = self.dailyStories[date]!
+        
+        assert(indexPath.row < stories.count, "No such story found in section \(indexPath.section)")
+        return stories[indexPath.row]
+    }
+    
+    // 获取下一个Story的indexPath
+    func indexPathForNextStory() -> NSIndexPath? {
+        var section = self.indexPathOfCurrentStory.section
+        var row = self.indexPathOfCurrentStory.row
+        
+        let date = self.dates[section]
+        let count = self.dailyStories[date]!.count
+        
+        row = row + 1
+        if row >= count {
+            row = 0
+            section = section + 1
+        }
+        
+        if section >= self.dates.count {
+            return nil
+        }
+        
+        return NSIndexPath(forRow: row, inSection: section)
+    }
+    
+
+    
     
 }

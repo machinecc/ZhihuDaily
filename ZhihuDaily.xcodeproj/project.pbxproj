@@ -17,6 +17,7 @@
 		225608B41AF67CFB0033FF11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225608B21AF67CFB0033FF11 /* LaunchScreen.xib */; };
 		225608C01AF67CFB0033FF11 /* ZhihuDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608BF1AF67CFB0033FF11 /* ZhihuDailyTests.swift */; };
 		225608D01AF74B100033FF11 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225608CF1AF74B100033FF11 /* Consts.swift */; };
+		229D7CD11B1898480004DA5F /* StoryTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D7CD01B1898480004DA5F /* StoryTransitionAnimator.swift */; };
 		22A1BA8C1AF9E60800115D02 /* UIImageViewAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */; };
 		22A785F11B07ABB40084F493 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A785F01B07ABB40084F493 /* SWRevealViewController.m */; };
 		22A785F31B07AC940084F493 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A785F21B07AC940084F493 /* MenuViewController.swift */; };
@@ -56,6 +57,7 @@
 		225608BE1AF67CFB0033FF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		225608BF1AF67CFB0033FF11 /* ZhihuDailyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhihuDailyTests.swift; sourceTree = "<group>"; };
 		225608CF1AF74B100033FF11 /* Consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		229D7CD01B1898480004DA5F /* StoryTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTransitionAnimator.swift; sourceTree = "<group>"; };
 		22A1BA8B1AF9E60800115D02 /* UIImageViewAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewAsync.swift; sourceTree = "<group>"; };
 		22A785EE1B07ABB30084F493 /* ZhihuDaily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZhihuDaily-Bridging-Header.h"; sourceTree = "<group>"; };
 		22A785EF1B07ABB40084F493 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -113,7 +115,7 @@
 			children = (
 				22FD074E1B0492320092CC3D /* Controller */,
 				22FD074D1B0492110092CC3D /* View */,
-				22FD074C1B0491F80092CC3D /* Common */,
+				22FD074C1B0491F80092CC3D /* Util */,
 				225608A61AF67CFB0033FF11 /* AppDelegate.swift */,
 				225608AD1AF67CFB0033FF11 /* Main.storyboard */,
 				225608B01AF67CFB0033FF11 /* Images.xcassets */,
@@ -158,17 +160,18 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
-		22FD074C1B0491F80092CC3D /* Common */ = {
+		22FD074C1B0491F80092CC3D /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				22A785EE1B07ABB30084F493 /* ZhihuDaily-Bridging-Header.h */,
 				2244ACF41B16303100D5AD16 /* Story.swift */,
 				22F46A601B12F40700C1D423 /* StoryDetail.swift */,
-				22A785EE1B07ABB30084F493 /* ZhihuDaily-Bridging-Header.h */,
 				225608CF1AF74B100033FF11 /* Consts.swift */,
 				22FD07481B03F2630092CC3D /* Date.swift */,
 				2244ACF21B16300200D5AD16 /* Utils.swift */,
+				229D7CD01B1898480004DA5F /* StoryTransitionAnimator.swift */,
 			);
-			name = Common;
+			name = Util;
 			sourceTree = "<group>";
 		};
 		22FD074D1B0492110092CC3D /* View */ = {
@@ -303,6 +306,7 @@
 				225608A71AF67CFB0033FF11 /* AppDelegate.swift in Sources */,
 				22A785F51B07B1E70084F493 /* HomeViewController.swift in Sources */,
 				22A786011B0ADCDB0084F493 /* StorySectionHeaderCell.swift in Sources */,
+				229D7CD11B1898480004DA5F /* StoryTransitionAnimator.swift in Sources */,
 				2244ACF31B16300200D5AD16 /* Utils.swift in Sources */,
 				225608D01AF74B100033FF11 /* Consts.swift in Sources */,
 				2244ACF51B16303100D5AD16 /* Story.swift in Sources */,
